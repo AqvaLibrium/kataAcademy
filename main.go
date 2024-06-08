@@ -27,8 +27,12 @@ func calculate(a, b, znak string) {
 			znachenie1 := rimskie[a]
 			znachenie2 := rimskie[b]
 			result := znachenie1 + znachenie2
-			newkey := arabskie[result]
-			fmt.Println(newkey)
+			if result <= 10 {
+				newkey := arabskie[result]
+				fmt.Println(newkey)
+			} else {
+				panic("Invalid result")
+			}
 		case "-":
 			znachenie1 := rimskie[a]
 			znachenie2 := rimskie[b]
@@ -53,7 +57,7 @@ func calculate(a, b, znak string) {
 			znachenie1 := rimskie[a]
 			znachenie2 := rimskie[b]
 			result := znachenie1 * znachenie2
-			if result > 0 {
+			if result > 0 && result <= 10 {
 				newkey := arabskie[result]
 				fmt.Println(newkey)
 			} else {
